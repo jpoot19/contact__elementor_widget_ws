@@ -7,3 +7,5 @@
  if( ! defined( 'WP_UNINSTALL_PLUGIN' )){
      die;
  }
+
+ //Clear database store data 

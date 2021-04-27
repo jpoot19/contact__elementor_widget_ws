@@ -7,58 +7,31 @@ Version: 1.0
 Author: Jonathan Poot
 */
 
+
+
 defined ( 'ABSPATH' ) or die('Hey, you can\t access this file');
 
-define( 'CW_DEVTZAL_LOCATION', dirname(__FILE__));
-define( 'CW_DEVTZAL_URL', plugins_url( '', __FILE__ ));
 
-class ContactWidgetDevtzal
-{
-
-    public function __construct()
-    {
-        // Create custom post type
-        add_action( 'init', array($this, 'create_custom_post_type') );
-
-        
-    }
-
-    function register(){
-        //add assets (js, css)
-        add_action('admin_enqueue_scripts', array($this, 'load_assets'));
-    }
-    function activate(){
-        $this->create_custom_post_type();
-        flush_rewrite_rules();
-    }
-    function deactivate(){
-        flush_rewrite_rules();
-    }
-    function create_custom_post_type()
-    {
-       // echo "IT WORKS";
-        $args = array(
-            'public' => true,
-            // 'has_archive' => true,
-            // 'supports' => array('title'),
-            // 'exclude_from_search' => true,
-            // 'publicly_queryable' => false,
-            // 'capability' => 'manage_options',
-            'label' => 'Contact Widget Devtzal',
-            // 'menu_icon' => 'dashicons-book'
-        );
-        register_post_type('contact_widget_devtzal', $args);
-    }
-
-    public function load_assets()
-    {
-        wp_enqueue_style('contact-widget-devtzal', plugins_url( '/admin/css/contact-widget-devtzal.css', __FILE__ ) );
-    }
+if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 }
 
-if( class_exists('ContactWidgetDevtzal')){
-    $contactWidgetDevtzal = new ContactWidgetDevtzal();
-}
 
-register_activation_hook( __FILE__, array($contactWidgetDevtzal, 'activate') );
-register_deactivation_hook( __FILE__, array($contactWidgetDevtzal, 'deactivate') );
+/* 
+define('PLUGIN_PATH', plugin_dir_path( __FILE__ ));
+define('PLUGIN_URL', plugin_dir_url( __FILE__));
+define('PLUGIN', plugin_basename( __FILE__)); */
+
+function activate_contact_widget_devtzal(){
+    Inc\Base\Activate::activate();
+}
+register_activation_hook( __FILE__, 'activate_contact-widget_devtzal' );
+
+function deactivate_contact_widget_devtzal(){
+    Inc\Base\Deactivate::deactivate();
+}
+register_deactivation_hook( __FILE__, 'deactivate_contact-widget_devtzal' );
+
+if ( class_exists( 'Inc\\Init' ) ){
+    Inc\Init::register_services();
+}
