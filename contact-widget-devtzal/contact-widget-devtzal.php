@@ -23,7 +23,7 @@ define('PLUGIN_URL', plugin_dir_url( __FILE__));
 define('PLUGIN', plugin_basename( __FILE__)); */
 
 function activate_contact_widget_devtzal(){
-    Inc\Base\Activate::activate();
+   Inc\Base\Activate::activate();
 }
 register_activation_hook( __FILE__, 'activate_contact-widget_devtzal' );
 
@@ -33,5 +33,5 @@ function deactivate_contact_widget_devtzal(){
 register_deactivation_hook( __FILE__, 'deactivate_contact-widget_devtzal' );
 
 if ( class_exists( 'Inc\\Init' ) ){
-    Inc\Init::register_services();
+    Inc\Init::registerServices();
 }
