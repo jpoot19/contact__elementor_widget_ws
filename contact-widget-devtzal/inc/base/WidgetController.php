@@ -11,6 +11,11 @@
  class WidgetController extends BaseController{
 
     public function register(){
-        
+      
+         //if(! $this-> activated('widget_devtzal')) return;
+
+         $widget_devtzal = new ContactWidget();
+         $widget_devtzal->register();
+         
     }
  }

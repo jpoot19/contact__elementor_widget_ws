@@ -48,6 +48,19 @@
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
+        ?>
+        <div class="chat-popup" id="myForm" style="position: fixed;bottom: 0;right: 15px; border: 3px solid #f1f1f1;z-index: 9;">
+            <form action="/action_page.php" >
+            <h1>Chat</h1>
+
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        <?php 
 		echo $args['after_widget'];
 	}
 

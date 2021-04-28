@@ -20,6 +20,7 @@ final class Init
             Admin\AdminPage::class,
             Base\Enqueue::class,
             Base\SettingsLinks::class,
+            Base\WidgetController::class,
         ];
     }
 
