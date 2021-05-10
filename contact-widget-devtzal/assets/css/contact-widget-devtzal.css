@@ -1,71 +1,139 @@
-* {box-sizing: border-box;}
+/*.floating-number-container{
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 999;
+}*/
+.widget_devtzal{
+    position: fixed;
+    bottom: 20px;
+    left: 65%;
+    z-index: 999;
+    line-height: 15px;
+}
 
-/* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
+    position: fixed; 
+    width: 110px;
+    height: 50px;
+    bottom:40px;
+    right: 40px;
+    background-color: #3C4981; 
+    color: #FFF; 
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    margin: 4px; 
+    padding: 5px 5px;
+}
+.widget-button {
+    text-align: center !important;
+    border-radius: 0px !important;
+    cursor: pointer !important;
+    display: table !important;
+    color: #fff!important;
+    font-size: 14px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around;
+}
+.widget-button i{
+    padding:0px 8px;
 }
 
-/* The popup chat - hidden by default */
-.chat-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+
+.hideWidget{
+    display: none;
 }
 
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
+
+.floating-number{
+    border-radius: 10px;
+    background-color: #ffff;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px 3px #80C7BC;
 }
 
-/* Full-width textarea */
-.form-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 200px;
+.chat-container {
+    color: #3c4981;
+    font-weight: bold;
 }
 
-/* When the textarea gets focus, do something */
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
+.fa-whatsapp{
+    font-weight:bold;
 }
 
-/* Set a style for the submit/send button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+/* #widget-devtzal-form .form-group{
+    border-bottom: 1px solid;
+}
+ */
+#widget-devtzal-form .form-control {
+    width: 100%;
+    background-color: #fff;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    margin: 5px 0px;
+  }
+
+
+#widget-devtzal-form .btn{
+    border-radius:0px;
+    height:50px;
+}
+#widget-devtzal-form .btn{
+    border-radius:0px;
+    height:50px;
+   
 }
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
+#widget-devtzal-form .btn-primary{
+    border-radius:0px;
+    height:50px;
+    background-color: #333C4E!important
 }
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+
+.container-widget{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
+.close{
+    cursor:pointer;
+ text-align:right;
+ display:block;
+ padding:10px;
+ }
+
+ #widget-devtzal-form .form-group select {background: #ffffff;
+    
+    font-size: 13px;}
+
+@media (min-width: 320px){
+    .container-widget{
+        width: 100%;
+    }
+    .widget_devtzal{
+        left:0;
+    }
+}
+
+@media (min-width: 768px){
+    .container-widget{
+        width: 350px;
+    }
+}
+
+@media(min-width:980px){
+    .container-widget{
+        width: 720px;
+        left: 65%;
+    }
+}
+

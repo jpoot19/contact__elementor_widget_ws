@@ -28,7 +28,7 @@
         );
 
         $this->control_options = array(
-            'width' => 400,
+            'width' => 250,
             'height' => 350
 
         );
@@ -45,38 +45,135 @@
 	}
     public function widget( $args, $instance ) {
 		echo $args['before_widget'];
-		if ( ! empty( $instance['title'] ) ) {
+		/* if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
+		} */
         ?>
-        <div class="chat-popup" id="myForm" style="position: fixed;bottom: 0;right: 15px; border: 3px solid #f1f1f1;z-index: 9;">
-            <form action="/action_page.php" >
-            <h1>Chat</h1>
 
-            <label for="msg"><b>Message</b></label>
-            <textarea placeholder="Type message.." name="msg" required></textarea>
+        <button class="open-button hideWidget" onclick="hideWidget()" id="widget-button">Llámanos</button>
 
-            <button type="submit" class="btn">Send</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
+    <div class="floating-parent-container" id="widget-contact">
+        <div class="container-widget">
+      
+            <div class="row">
+            
+                <div class="floating-number col-12 col-sm-6 col-md-6">
+                    <div class="row text-center">
+                        <?php
+                            if( !empty($instance['phone']) )
+                            {
+                                
+                                echo '<a href="tel:+'.$instance['phone'].'" id="right_side_form_profile_number" >'
+                                ?>
+                                <?php
+                                    //echo '<h2 class="chat-container">'.$instance['phone'].'</h2>'
+                                ?>
+                                </a>
+                                <?php
+                            }
+                        ?>
+                        <span class="close" onclick="hideWidget()" ><i class="far fa-times-circle"></i></span>
+                        <p class="chat-container">
+                            Te guiaremos personalmente a lo largo de todo el proceso de estudiar en el extranjero
+                        </p>
+                        <div>
+                            <form id="widget-devtzal-form">
+                            <?php
+                            if( !empty($instance['siteId']) )
+                            {
+                                echo '<input hidden id="siteId" name="siteId" value="'.$instance['siteId'].'" >';
+                            }
+                            ?>
+                                <!-- <input hidden id="siteId" > -->
+                                
+                                <div class="form-group">
+                                    <!-- <label for="name">Name</label> -->
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="name">Name</label> -->
+                                    <input type="text" class="form-control" id="lastname" placeholder="Lastname" required>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="name">Name</label> -->
+                                    <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="name">Name</label> -->
+                                    <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="name">Name</label> -->
+                                    <select id="country" class=" form-control selectpicker countrypicker" data-live-search="true" data-default="United States" data-flag="true"></select>
+                                </div>
+                             <div class="pt-2 pb-2">
+                                    <button type="submit" class="btn btn-primary ">
+                                        Agendar llamada
+                                    </button>
+                                </di> 
+                                <div class="alert alert-success" role="alert" style="display: none;" id ="alert-msg-success">
+                                    ¡Mensaje enviado Correctamente!
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                <div class="alert alert-danger" role="alert" style="display: none;" id ="alert-msg-error">
+                                    Something went wrong!
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <div class="btn-group widget-devtzal-btn" role="group" aria-label="Basic mixed styles example">
+                            <?php
+                            if( !empty($instance['phone']) )
+                            {
+                                echo '<a type="button" class="btn btn-primary widget-button" href="tel:+'.$instance['phone'].'">Phone <i class="fa fa-phone" aria-hidden="true"></i></a>';
+                            }
+                            if( !empty($instance['whatsapp']) )
+                            {
+                                echo '<a type="button" class="btn btn-success widget-button" href="https://api.whatsapp.com/send?phone='.$instance['whatsapp'].'">Whatsapp <i class="fab fa-whatsapp"></i> </a>';
+                            }
+                            ?>
+                                <!-- <a type="button" class="btn btn-primary widget-button" href="tel:+529981533521">Phone <i class="fa fa-phone" aria-hidden="true"></i></a>
+                                <a type="button" class="btn btn-success widget-button" href="https://api.whatsapp.com/send?phone=+52998200757">Whatsapp <i class="fab fa-whatsapp"></i> </a>  -->               
+                        </div>
+                    </div>                 
+                </div><!--endcolmd6-->
+            </div>  <!--endrow-->
         </div>
+    </div>
+
+
+
+      
         <?php 
 		echo $args['after_widget'];
 	}
 
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Custom Text', '' );
+		$phoneNumber = ! empty( $instance['phone'] ) ? $instance['phone'] : esc_html__( '9000000000', '' );
+        $whatsappNumber = ! empty( $instance['whatsapp'] ) ? $instance['whatsapp'] : esc_html__( '+529000000000', '' );
+        $siteId = ! empty( $instance['siteId'] ) ? $instance['siteId'] : esc_html__( 'WORKANDSTUDY', '' );
 		?>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'awps' ); ?></label> 
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		<label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_attr_e( 'Phone Number:', 'phone_number' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'phone' ) ); ?>" type="text" value="<?php echo esc_attr( $phoneNumber ); ?>">
+		</p>
+        <p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'whatsapp' ) ); ?>"><?php esc_attr_e( 'Whatsapp Number:', 'whatsapp_number' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'whatsapp' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'whatsapp' ) ); ?>" type="text" value="<?php echo esc_attr( $whatsappNumber ); ?>">
+		</p>
+        <p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'siteId' ) ); ?>"><?php esc_attr_e( 'Site Id:', 'site_id' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'siteId' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'siteId' ) ); ?>" type="text" value="<?php echo esc_attr( $siteId ); ?>">
 		</p>
 		<?php 
 	}
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		$instance['phone'] = sanitize_text_field( $new_instance['phone'] );
+        $instance['whatsapp'] = sanitize_text_field( $new_instance['whatsapp'] );
+        $instance['siteId'] = sanitize_text_field( $new_instance['siteId'] );
 
 		return $instance;
 	}
