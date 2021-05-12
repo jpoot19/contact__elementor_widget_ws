@@ -10,7 +10,7 @@ function hideWidget() {
 
   async function orionRequest(){
     try{
-      if(aborter) aborter.abort();
+      //if(aborter) aborter.abort();
       var selected = $("#country").find('option:selected');
        var extra = selected.data('country-code'); 
       // make our request cancellable
@@ -36,7 +36,7 @@ function hideWidget() {
       body: bodyFromText
       });
       const rq = await response.json();
-      aborter = null;
+      //aborter = null;
       console.log(rq);
       $("#alert-msg-success").show();
       $("#alert-msg-error").hide();

@@ -16,15 +16,18 @@
 
         public function enqueue()
         {
-            wp_enqueue_style('contact-widget-devtzal', $this->plugin_url .  'assets/fontawesome/css/all.min.css' );
-            //Bootstrap
-            wp_enqueue_style('contact-widget-devtzal', $this->plugin_url .  'assets/bootstrap/css/bootstrap.min.css' );
-            wp_enqueue_script('contact-widget-devtzal',  $this->plugin_url .'assets/bootstrap/js/bootstrap.min.js');
-
-            wp_enqueue_style('bootstrap_css', $this->plugin_url .  'assets/css/contact-widget-devtzal.css?v='.rand() );
-            wp_enqueue_script('bootstrap_js',  $this->plugin_url .'assets/js/contact-widget-devtzal.js?v='.rand());
-
             wp_enqueue_script('jquery_3.6.0',  $this->plugin_url .'assets/js/jquery-3.6.0.min.js');
+            wp_enqueue_style('contact-widget-devtzal_css', $this->plugin_url .  'assets/css/contact-widget-devtzal.css?v='.rand() );
+            wp_enqueue_script('contact-widget-devtzal_js',  $this->plugin_url .'assets/js/contact-widget-devtzal.js?v='.rand());
+
+            wp_enqueue_style('fontawesome_css', $this->plugin_url .  'assets/fontawesome/css/all.min.css' );
+            //Bootstrap
+            wp_enqueue_style('bootstrap_css', $this->plugin_url .  'assets/bootstrap/css/bootstrap.min.css' );
+            wp_enqueue_script('bootstrap_js',  $this->plugin_url .'assets/bootstrap/js/bootstrap.min.js');
+
+           
+
+           
             // Countries
 
             wp_enqueue_style('country_flags', $this->plugin_url .  'assets/countries/css/flags/es.png' );

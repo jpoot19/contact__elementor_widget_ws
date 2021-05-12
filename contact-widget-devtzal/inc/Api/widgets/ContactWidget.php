@@ -50,14 +50,14 @@
 		} */
         ?>
 
-        <button class="open-button hideWidget" onclick="hideWidget()" id="widget-button">Llámanos</button>
+        <button class="open-button " onclick="hideWidget()" id="widget-button">Llámanos</button>
 
-    <div class="floating-parent-container" id="widget-contact">
+    <div class="floating-parent-container hideWidget" id="widget-contact">
         <div class="container-widget">
       
             <div class="row">
             
-                <div class="floating-number col-12 col-sm-6 col-md-6">
+                <div class="floating-number col-12 col-sm-12 col-md-12">
                     <div class="row text-center">
                         <?php
                             if( !empty($instance['phone']) )
@@ -88,23 +88,23 @@
                                 
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="lastname" placeholder="Lastname" required>
+                                    <input type="text" class="form-control" id="lastname" placeholder="Apellidos" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                    <input type="text" class="form-control" id="email" placeholder="Correo electrónico" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+                                    <input type="text" class="form-control" id="phone" placeholder="Teléfono" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <select id="country" class=" form-control selectpicker countrypicker" data-live-search="true" data-default="United States" data-flag="true"></select>
+                                    <select id="country" class=" form-control selectpicker countrypicker" data-live-search="true" data-default="United States" data-flag="false"></select>
                                 </div>
                              <div class="pt-2 pb-2">
                                     <button type="submit" class="btn btn-primary ">
@@ -126,7 +126,7 @@
                             <?php
                             if( !empty($instance['phone']) )
                             {
-                                echo '<a type="button" class="btn btn-primary widget-button" href="tel:+'.$instance['phone'].'">Phone <i class="fa fa-phone" aria-hidden="true"></i></a>';
+                                echo '<a type="button" class="btn btn-primary widget-button" href="tel:'.$instance['phone'].'">Llamar Ahora <i class="fa fa-phone" aria-hidden="true"></i></a>';
                             }
                             if( !empty($instance['whatsapp']) )
                             {
