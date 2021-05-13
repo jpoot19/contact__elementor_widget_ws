@@ -50,7 +50,7 @@
 		} */
         ?>
 
-        <button class="open-button " onclick="hideWidget()" id="widget-button">Llámanos</button>
+        <button class="open-button " onclick="hideWidget()" id="widget-button">Call Us</button>
 
     <div class="floating-parent-container hideWidget" id="widget-contact">
         <div class="container-widget">
@@ -74,7 +74,7 @@
                         ?>
                         <span class="close" onclick="hideWidget()" ><i class="far fa-times-circle"></i></span>
                         <p class="chat-container">
-                            Te guiaremos personalmente a lo largo de todo el proceso de estudiar en el extranjero
+                            We will personally guide you through the entire process of studying abroad
                         </p>
                         <div>
                             <form id="widget-devtzal-form">
@@ -88,19 +88,19 @@
                                 
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="lastname" placeholder="Apellidos" required>
+                                    <input type="text" class="form-control" id="lastname" placeholder="Lastname" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="email" placeholder="Correo electrónico" required>
+                                    <input type="text" class="form-control" id="email" placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
-                                    <input type="text" class="form-control" id="phone" placeholder="Teléfono" required>
+                                    <input type="text" class="form-control" id="phone" placeholder="Phone" required>
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="name">Name</label> -->
@@ -108,11 +108,11 @@
                                 </div>
                              <div class="pt-2 pb-2">
                                     <button type="submit" class="btn btn-primary ">
-                                        Agendar llamada
+                                        Schedule a call
                                     </button>
                                 </di> 
                                 <div class="alert alert-success" role="alert" style="display: none;" id ="alert-msg-success">
-                                    ¡Mensaje enviado Correctamente!
+                                Message sent Successfully!
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                                 <div class="alert alert-danger" role="alert" style="display: none;" id ="alert-msg-error">
@@ -122,15 +122,15 @@
                                 
                             </form>
                         </div>
-                        <div class="btn-group widget-devtzal-btn" role="group" aria-label="Basic mixed styles example">
+                        <div class="btn-group widget-devtzal-btn" role="group" aria-label="Basic mixed styles example" id="contact-buttons">
                             <?php
                             if( !empty($instance['phone']) )
                             {
-                                echo '<a type="button" class="btn btn-primary widget-button" href="tel:'.$instance['phone'].'">Llamar Ahora <i class="fa fa-phone" aria-hidden="true"></i></a>';
+                                echo '<a type="button" class="btn btn-primary widget-button" href="tel:'.$instance['phone'].'"> Call now <i class="fa fa-phone" aria-hidden="true"></i></a>';
                             }
                             if( !empty($instance['whatsapp']) )
                             {
-                                echo '<a type="button" class="btn btn-success widget-button" href="https://api.whatsapp.com/send?phone='.$instance['whatsapp'].'">Whatsapp <i class="fab fa-whatsapp"></i> </a>';
+                                echo '<a type="button" class="btn btn-success widget-button" href="https://api.whatsapp.com/send?phone='.$instance['whatsapp'].'" target="_blank">Whatsapp <i class="fab fa-whatsapp"></i> </a>';
                             }
                             ?>
                                 <!-- <a type="button" class="btn btn-primary widget-button" href="tel:+529981533521">Phone <i class="fa fa-phone" aria-hidden="true"></i></a>

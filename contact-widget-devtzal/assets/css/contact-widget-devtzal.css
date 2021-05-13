@@ -4,12 +4,12 @@
     right: 15px;
     z-index: 999;
 }*/
-.widget_devtzal{
+#widget-contact{
     position: fixed;
-    bottom: 20px;
-    left: 65%;
+    bottom: 10px;
+    /*left: 65%;*/
     z-index: 999;
-    line-height: 15px;
+    line-height: 20px;
 }
 
 .open-button {
@@ -25,18 +25,27 @@
     box-shadow: 2px 2px 3px #999;
     margin: 4px; 
     padding: 5px 5px;
+    z-index:999;
 }
+
 .widget-button {
+
     text-align: center !important;
-    border-radius: 0px !important;
+    border-radius: 4px !important;
     cursor: pointer !important;
     display: table !important;
-    color: #fff!important;
-    font-size: 14px !important;
+    color: #3C4981!important;
+    
     width: 100% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-around;
+    background-color: #FFFF!important;
+    border-width: 2px!important;
+    margin: 0px 5px;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 600 !important;
 }
 .widget-button i{
     padding:0px 8px;
@@ -54,16 +63,18 @@
     border: 1px solid #f1f1f1;
     padding: 10px;
     box-sizing: border-box;
-    box-shadow: 0px 1px 2px 3px #80C7BC;
+    box-shadow: 0px 1px 2px 3px #1D4458;
    /* position: relative;
      /*right: -14%;*/
 }
 
 .chat-container {
-    color: #3c4981;
-    font-weight: bold;
+    color: #1D4458;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 600;
     position: relative;
-    margin-top: -40px !important;
+    margin-top: -25px !important;
 }
 
 .fa-whatsapp{
@@ -74,6 +85,7 @@
     border-bottom: 1px solid;
 }
  */
+
 #widget-devtzal-form .form-control {
     width: 100%;
     background-color: #fff;
@@ -83,6 +95,8 @@
     resize: vertical;
     margin: 5px 0px;
     color: #272424;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
   }
 
 
@@ -97,10 +111,28 @@
 }
 
 #widget-devtzal-form .btn-primary{
-    border-radius:0px;
+    border-radius:4px;
     height:50px;
-    background-color: #333C4E!important
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #FFFF!important;
+    color: #1D4458;
+    border-color: #1D4458;
+    border-width: 2px;
 }
+
+#contact-buttons .btn-primary{
+    color: #0D6EFD !important;
+}
+#contact-buttons .btn-success{
+    color: #198754 !important;
+}
+#contact-buttons .fab{
+    font-weight: 900;
+    font-size: 18px;
+}
+
 
 
 .container-widget{
@@ -115,9 +147,9 @@
     display:block;
     padding:10px;    
     position: relative;
-    top: -13px;
+    top: -16px;
     z-index: 9999;
-    right: -7%;
+    right: -3%;
  }
 
  #widget-devtzal-form .form-group select {background: #ffffff;
@@ -127,29 +159,38 @@
 @media (min-width: 320px){
     .container-widget{
         width: 100%;
+        left: 0%;
+        position: fixed;
+        bottom: 10px;
     }
     
-    .floating-number{
+    /* .floating-number{
         right:64%;
-    }
+    } */
 }
 
 @media (min-width: 768px){
     .container-widget{
         width: 350px;
+        left: 50%;
+        position: fixed;
+        bottom: 10px;
     }
-    .floating-number{
+    /* .floating-number{
         right:25%;
-    }
+    } */
 }
 
 @media(min-width:1030px){
     .container-widget{
         width: 350px;
+        left: 72%;
+        position: fixed;
+        bottom: 10px;
        
     }
-    .floating-number{
+    /* .floating-number{
         right:-35%;
-    }
+    } */
 }
 

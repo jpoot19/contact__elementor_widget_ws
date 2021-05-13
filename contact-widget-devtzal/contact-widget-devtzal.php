@@ -88,7 +88,7 @@ add_action( 'rest_api_init', function () {
     //return $postdata;
     $curl = curl_init();
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://admin.idiomastravel.net/inbox/data/save',
+        CURLOPT_URL => 'https://release.idiomastravel.net/inbox/data/save',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
