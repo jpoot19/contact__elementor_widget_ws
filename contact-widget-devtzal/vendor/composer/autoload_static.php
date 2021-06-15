@@ -16,12 +16,23 @@ class ComposerStaticInit8588fb90e3230da7c223326b4e042aaf
     public static $prefixDirsPsr4 = array (
         'Inc\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/inc',
+            0 => __DIR__ . '/../..' . '/Inc',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Inc\\Admin\\AdminPage' => __DIR__ . '/../..' . '/Inc/Admin/AdminPage.php',
+        'Inc\\Api\\Callbacks\\AdminCallbacks' => __DIR__ . '/../..' . '/Inc/Api/Callbacks/AdminCallbacks.php',
+        'Inc\\Api\\SettingsApi' => __DIR__ . '/../..' . '/Inc/Api/SettingsApi.php',
+        'Inc\\Api\\Widgets\\ContactWidget' => __DIR__ . '/../..' . '/Inc/Api/widgets/ContactWidget.php',
+        'Inc\\Base\\Activate' => __DIR__ . '/../..' . '/Inc/Base/Activate.php',
+        'Inc\\Base\\BaseController' => __DIR__ . '/../..' . '/Inc/Base/BaseController.php',
+        'Inc\\Base\\Deactivate' => __DIR__ . '/../..' . '/Inc/Base/Deactivate.php',
+        'Inc\\Base\\Enqueue' => __DIR__ . '/../..' . '/Inc/Base/Enqueue.php',
+        'Inc\\Base\\SettingsLinks' => __DIR__ . '/../..' . '/Inc/Base/SettingsLinks.php',
+        'Inc\\Base\\WidgetController' => __DIR__ . '/../..' . '/Inc/Base/WidgetController.php',
+        'Inc\\Init' => __DIR__ . '/../..' . '/Inc/Init.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

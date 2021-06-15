@@ -7,4 +7,15 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Inc\\Admin\\AdminPage' => $baseDir . '/Inc/Admin/AdminPage.php',
+    'Inc\\Api\\Callbacks\\AdminCallbacks' => $baseDir . '/Inc/Api/Callbacks/AdminCallbacks.php',
+    'Inc\\Api\\SettingsApi' => $baseDir . '/Inc/Api/SettingsApi.php',
+    'Inc\\Api\\Widgets\\ContactWidget' => $baseDir . '/Inc/Api/widgets/ContactWidget.php',
+    'Inc\\Base\\Activate' => $baseDir . '/Inc/Base/Activate.php',
+    'Inc\\Base\\BaseController' => $baseDir . '/Inc/Base/BaseController.php',
+    'Inc\\Base\\Deactivate' => $baseDir . '/Inc/Base/Deactivate.php',
+    'Inc\\Base\\Enqueue' => $baseDir . '/Inc/Base/Enqueue.php',
+    'Inc\\Base\\SettingsLinks' => $baseDir . '/Inc/Base/SettingsLinks.php',
+    'Inc\\Base\\WidgetController' => $baseDir . '/Inc/Base/WidgetController.php',
+    'Inc\\Init' => $baseDir . '/Inc/Init.php',
 );

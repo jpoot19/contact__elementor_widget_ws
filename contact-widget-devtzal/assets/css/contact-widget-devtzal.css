@@ -1,71 +1,197 @@
-* {box-sizing: border-box;}
+/*.floating-number-container{
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 999;
+}*/
+#widget-contact{
+    position: fixed;
+    bottom: 10px;
+    /*left: 65%;*/
+    z-index: 999;
+    line-height: 20px;
+}
 
-/* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
+    position: fixed; 
+    width: 110px;
+    height: 50px;
+    bottom:40px;
+    right: 40px;
+    background-color: #F15C3A; 
+    color: #FFF; 
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    margin: 4px; 
+    padding: 5px 5px;
+    z-index:999;
 }
 
-/* The popup chat - hidden by default */
-.chat-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+.widget-button {
+
+    text-align: center !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    display: table !important;
+    color: #3C4981!important;
+    
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around;
+    background-color: #FFFF!important;
+    border-width: 2px!important;
+    margin: 0px 5px;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 600 !important;
+}
+.widget-button i{
+    padding:0px 8px;
 }
 
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
+
+.hideWidget{
+    display: none;
 }
 
-/* Full-width textarea */
-.form-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 200px;
+
+.floating-number{
+    border-radius: 10px;
+    background-color: #ffff;
+    border: 1px solid #f1f1f1;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px 3px #1D4458;
+   /* position: relative;
+     /*right: -14%;*/
 }
 
-/* When the textarea gets focus, do something */
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
+.chat-container {
+    color: #1D4458;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    margin-top: -25px !important;
 }
 
-/* Set a style for the submit/send button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+.fa-whatsapp{
+    font-weight:bold;
 }
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
+/* #widget-devtzal-form .form-group{
+    border-bottom: 1px solid;
+}
+ */
+
+#widget-devtzal-form .form-control {
+    width: 100%;
+    background-color: #fff;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    margin: 5px 0px;
+    color: #747474;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    height: auto;
+  }
+
+
+#widget-devtzal-form .btn{
+    border-radius:0px;
+    height:50px;
+}
+#widget-devtzal-form .btn{
+    border-radius:0px;
+    height:50px;
+   
 }
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+#widget-devtzal-form .btn-primary{
+    border-radius:4px;
+    height:50px;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #FFFF!important;
+    color: #1D4458;
+    border-color: #1D4458;
+    border-width: 2px;
 }
+
+#contact-buttons .btn-primary{
+    color: #0D6EFD !important;
+}
+#contact-buttons .btn-success{
+    color: #198754 !important;
+}
+#contact-buttons .fab{
+    font-weight: 900;
+    font-size: 18px;
+}
+
+
+
+.container-widget{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.close{
+    cursor:pointer;
+    text-align:right;
+    display:block;
+    padding:10px;    
+    position: relative;
+    top: -16px;
+    z-index: 9999;
+    right: -3%;
+ }
+
+ #widget-devtzal-form .form-group select {background: #ffffff;
+    
+    font-size: 15px;}
+
+@media (min-width: 320px){
+    .container-widget{
+        width: 100%;
+        left: 0%;
+        position: fixed;
+        bottom: 10px;
+    }
+    
+    /* .floating-number{
+        right:64%;
+    } */
+}
+
+@media (min-width: 768px){
+    .container-widget{
+        width: 350px;
+        left: 50%;
+        position: fixed;
+        bottom: 10px;
+    }
+    /* .floating-number{
+        right:25%;
+    } */
+}
+
+@media(min-width:1030px){
+    .container-widget{
+        width: 350px;
+        left: 72%;
+        position: fixed;
+        bottom: 10px;
+       
+    }
+    /* .floating-number{
+        right:-35%;
+    } */
+}
+

@@ -32,6 +32,85 @@ function deactivate_contact_widget_devtzal(){
 }
 register_deactivation_hook( __FILE__, 'deactivate_contact-widget_devtzal' );
 
-if ( class_exists( 'Inc\\Init' ) ){
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'devtzal/widget/v1', '/contact', array(
+      'methods' => 'POST',
+      'callback' => 'addLead',
+      'args' => [],
+    ) );
+  } );
+
+
+ function addLead(WP_REST_Request $request){
+    $body = $request->get_json_params();
+    //return $body['name'];
+    if(!empty($body['name']))
+    {
+        $name = $body['name'];
+    }
+    if(!empty($body['surname']))
+    {
+        $surname = $body['surname'];
+    }
+    if(!empty($body['email']))
+    {
+        $email = $body['email'];
+    }
+    if(!empty($body['phone']))
+    {
+        $phone = $body['phone'];
+    }
+    if(!empty($body['from']))
+    {
+        $from = $body['from'];
+    }
+    if(!empty($body['country']))
+    {
+        $country = $body['country'];
+    }
+    $comentarios = "WIDGET";
+    $origen=2;
+    $lang="es";
+    $country_iso= $country;
+    $data = array(
+        'name' => $name,
+        'surname' => $surname,
+        'email' => $email,
+        'phone' => $phone,
+        'from' => $from,
+        'comentarios' => 'WIDGET',
+        'origen' => 2,
+        'lang' => 'es',
+        'country_iso' =>  $country_iso
+    );
+
+    $postdata = json_encode($data);
+    //return $postdata;
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://admin.idiomastravel.net/inbox/data/save',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => $postdata,        
+        CURLOPT_HTTPHEADER => array(
+          'Content-Type: application/json'
+        ),
+      ));
+
+      
+      
+      $response = curl_exec($curl);
+      
+      curl_close($curl);
+      return $response;
+
+ }
+
+// if ( class_exists( 'Inc\\Init' ) ){
     Inc\Init::registerServices();
-}
+//}
